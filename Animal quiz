@@ -1,0 +1,105 @@
+#Check function - checks the answer
+
+def check_guess(guess, answer):
+
+    global score #a global variable ensures that changes to the variabe can be seen throughout the whole program
+
+    still_guessing = True
+
+    attempt = 0
+
+    while still_guessing and attempt < 3:
+
+        if guess.lower() == answer.lower():
+
+            print('Correct Answer!')
+
+            score = score + 3 - attempt
+
+            still_guessing = False
+
+        else:
+
+            if attempt < 2:
+
+                guess = input('Sorry, wrong answer. Try again.')
+
+            attempt = attempt + 1
+
+        if attempt == 3:
+
+            print('The correct answer is ' + answer+'.')
+
+#Set score to 0
+
+score = 0 
+
+#Introduce the game
+
+print('Welcome to Guessing the Animal Quizzo.')
+
+print('The rules are simple.\1. There will be a variety of 10 questions, where each question is worth 3 points.\2. Each question contains 3 attempts. One point will be deducted per attempt used until you have reached the maximum of 3 attempts.\3. The maximum overall score each player can get is 30.\LET\ GET STARTED!')
+
+start = input('Please press ENTER to begin quiz.')
+
+#Ask question and get user's answer
+
+guess1 = input('Which bear lives at the North Pole? ')
+
+#"Call" (run) the check function
+
+check_guess (guess1, 'polar bear')
+
+#More questions
+
+guess2 = input('Which is the fastest land animal? ')
+
+check_guess (guess2, 'cheetah')
+
+guess3 = input('Which is the largest animal? ')
+
+check_guess (guess3, 'blue whale')
+
+guess4 = input('Which is the slowest animal? ')
+
+check_guess (guess4, 'sloth')
+
+guess5 = input('Which animal is a universal symbol for peace? ')
+
+check_guess (guess5, 'dove')
+
+guess6 = input('Which animal does not have vocal chords? ')
+
+check_guess (guess6, 'giraffe')
+
+guess7 = input('Which animal cannot fart? ')
+
+check_guess (guess7, 'kangaroo')
+
+guess8 = input('Which animal\ eyes are bigger than its brain? ')
+
+check_guess (guess8, 'ostrich')
+
+guess9 = input('Which aniaml eats sugar cane? ')
+
+check_guess (guess9, 'panda')
+
+guess10 = input('Which animal is a symbol of hope? ')
+
+check_guess (guess10, 'sparrow')
+
+#Display score
+
+if score == 30:
+
+    print('Congratulations! You answered all of the questions correctly! Your score is ' + str(score)+'.')
+
+elif score >= 20:
+
+    print('Good Job! Your score is ' + str(score)+'.')
+
+else:
+
+    print('Try again next time. Your score is ' + str(score)+'.')
+
+#Source:https://www.triviaquestionss.com/animal-trivia-questions/
